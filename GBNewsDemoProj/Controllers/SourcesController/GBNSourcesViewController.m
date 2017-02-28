@@ -11,6 +11,7 @@
 #import "GBNNewsListViewController.h"
 #import "AppUtils.h"
 
+
 @interface GBNSourcesViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewSources;
@@ -27,11 +28,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initializeValues];
+    [self setupUI];
     [self callApiSourceList];
 }
 
 - (void)initializeValues {
     arrSources = [[NSMutableArray alloc] init];
+}
+
+-(void)setupUI {
+    _tableViewSources.rowHeight = UITableViewAutomaticDimension;
+    _tableViewSources.estimatedRowHeight = 95;
 }
 
 #pragma mark - API Section
@@ -57,16 +64,14 @@
     arrSources = [[NSMutableArray alloc] init];
     [arrTempSources enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        @autoreleasepool {
-//            ModelSource * objSource = [[ModelSource alloc] init];
-//            objSource.sourceID = obj[@"id"];
-//            objSource.sourceName = obj[@"name"];
-//            objSource.sourceDescription = obj[@"description"];
-//            objSource.sourceURL = obj[@"url"];
-//            
-//            [arrSources addObject:obj];
-        }
-        
+            ModelSource * objSource = [[ModelSource alloc] init];
+            objSource.sourceID = (NSString*)obj[@"id"];
+            objSource.sourceName = (NSString*)obj[@"name"];
+            objSource.sourceDescription = (NSString*)obj[@"description"];
+            objSource.sourceURL = (NSString*)obj[@"url"];
+            objSource.sourceSortBysAvailable = (NSArray*)obj[@"sortBysAvailable"];
+            
+            [arrSources addObject:objSource];
     }];
     [self.tableViewSources reloadData];
 }
@@ -80,18 +85,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    ModelSource *obj = arrSources[indexPath.row];
+    ModelSource *objSource = arrSources[indexPath.row];
     GBNSourceCell *cell = (GBNSourceCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GBNSourceCell class])];
-//    cell.dataSource = obj;
+    cell.dataSource = objSource;
     return cell;
 }
 
 #pragma mark - UITableView Delegates
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 95;
-}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -105,9 +105,9 @@
         [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             cell.transform = CGAffineTransformMakeScale(1.0, 1.0);
         } completion:^( BOOL finished) {
-//            ModelSource *obj = arrSources[indexPath.row];
+            ModelSource *objSource = arrSources[indexPath.row];
             GBNNewsListViewController *vc=[self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([GBNNewsListViewController class])];
-//            vc.modelSourceObj = obj;
+            vc.modelSourceObj = objSource;
             [self.navigationController pushViewController:vc animated:YES];
             
         }];

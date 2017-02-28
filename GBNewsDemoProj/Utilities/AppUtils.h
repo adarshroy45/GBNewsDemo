@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
 #import "ApiManager.h"
-#import "Models.h"
+#import "ModelSource.h"
 
 //Macros
 #define BASE_URL @"https://newsapi.org/v1/"
@@ -24,6 +24,7 @@
 
 +(AppUtils *)sharedUtil;
 
++(BOOL)isSafeString:(NSString*)str;
 - (void)showCommonHud;
 - (void)hideCommonHud;
 

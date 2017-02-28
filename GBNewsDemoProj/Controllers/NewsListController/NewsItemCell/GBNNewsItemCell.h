@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppUtils.h"
 
 @interface GBNNewsItemCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTopic;
 @property (weak, nonatomic) IBOutlet UILabel *labelDescription;
+
+@property (strong, nonatomic) ModelNewsItem *dataSource;
 
 @end

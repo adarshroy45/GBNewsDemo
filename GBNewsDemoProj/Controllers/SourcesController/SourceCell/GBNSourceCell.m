@@ -22,7 +22,6 @@
 }
 
 - (void)setDataSource:(ModelSource *)dataSource {
-    
     _labelTopic.text = dataSource.sourceName;
     _labelDescription.text = dataSource.sourceDescription;
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C780A3B31E64A54C00452F8C /* ModelSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C780A3B21E64A54C00452F8C /* ModelSource.m */; };
 		C7C977521E5C91E900F33212 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C977511E5C91E900F33212 /* main.m */; };
 		C7C977551E5C91E900F33212 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C977541E5C91E900F33212 /* AppDelegate.m */; };
 		C7C977721E5C97D000F33212 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C977711E5C97D000F33212 /* BaseViewController.m */; };
@@ -28,10 +29,11 @@
 		C7E3BC861E5EC34F00508790 /* ApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E3BC851E5EC34F00508790 /* ApiManager.m */; };
 		C7E3BC8B1E5EC61B00508790 /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E3BC8A1E5EC61B00508790 /* AppUtils.m */; };
 		C7E3BC8F1E5ED99700508790 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E3BC8E1E5ED99700508790 /* MBProgressHUD.m */; };
-		C7E3BC931E5EDF3500508790 /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E3BC921E5EDF3500508790 /* Models.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C780A3B11E64A54C00452F8C /* ModelSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelSource.h; sourceTree = "<group>"; };
+		C780A3B21E64A54C00452F8C /* ModelSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelSource.m; sourceTree = "<group>"; };
 		C7C9774D1E5C91E900F33212 /* GBNewsDemoProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBNewsDemoProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C977511E5C91E900F33212 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C7C977531E5C91E900F33212 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,8 +72,6 @@
 		C7E3BC8A1E5EC61B00508790 /* AppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtils.m; sourceTree = "<group>"; };
 		C7E3BC8D1E5ED99700508790 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		C7E3BC8E1E5ED99700508790 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		C7E3BC911E5EDF3500508790 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
-		C7E3BC921E5EDF3500508790 /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,8 +269,8 @@
 		C7E3BC901E5EDF1600508790 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C7E3BC911E5EDF3500508790 /* Models.h */,
-				C7E3BC921E5EDF3500508790 /* Models.m */,
+				C780A3B11E64A54C00452F8C /* ModelSource.h */,
+				C780A3B21E64A54C00452F8C /* ModelSource.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,10 +353,10 @@
 				C7E3BC811E5EC24500508790 /* AFURLRequestSerialization.m in Sources */,
 				C7E3BC861E5EC34F00508790 /* ApiManager.m in Sources */,
 				C7C977551E5C91E900F33212 /* AppDelegate.m in Sources */,
-				C7E3BC931E5EDF3500508790 /* Models.m in Sources */,
 				C7E3BC8F1E5ED99700508790 /* MBProgressHUD.m in Sources */,
 				C7E3BC8B1E5EC61B00508790 /* AppUtils.m in Sources */,
 				C7E3BC821E5EC24500508790 /* AFURLResponseSerialization.m in Sources */,
+				C780A3B31E64A54C00452F8C /* ModelSource.m in Sources */,
 				C7E3BC7E1E5EC24500508790 /* AFHTTPSessionManager.m in Sources */,
 				C7C977871E5CBD3200F33212 /* GBNSourceCell.m in Sources */,
 				C7C977521E5C91E900F33212 /* main.m in Sources */,

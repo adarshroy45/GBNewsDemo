@@ -32,6 +32,17 @@ static AppUtils *sharedUtil;
     return self;
 }
 
+#pragma mark -
+
++(BOOL)isSafeString:(NSString*)str {
+    if ((str == (id)[NSNull null]) || !str) {
+        return  false;
+    }
+    else {
+        return true;
+    }
+}
+
 #pragma mark - HUD
 
 - (void)showCommonHud

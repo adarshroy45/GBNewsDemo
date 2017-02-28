@@ -21,4 +21,9 @@
     // Configure the view for the selected state
 }
 
+- (void)setDataSource:(ModelNewsItem *)dataSource {
+    _labelTopic.text = [AppUtils isSafeString:dataSource.newsTitle] ? dataSource.newsTitle : @"N/A";
+    _labelDescription.text = [AppUtils isSafeString:dataSource.newsDescription] ? dataSource.newsDescription : @"N/A";
+}
+
 @end

@@ -14,5 +14,6 @@
 +(ApiManager*)sharedManager;
 
 -(void)getNewsSourcesOfLanguage:(NSString*)lang OnSuccess:(void(^)(NSDictionary *response))success failure:(void(^)(NSString *errorMsg,NSError *error))failure;
+-(void)getNewsItemsFromSourceID:(NSString*)sourceID sortBy:(NSString*)sortBy OnSuccess:(void(^)(NSDictionary *response))success failure:(void(^)(NSString *errorMsg,NSError *error))failure;
 
 @end
